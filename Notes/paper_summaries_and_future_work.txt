@@ -1,178 +1,57 @@
-RESEARCH PAPER SUMMARIES AND FUTURE WORK NOTES
+Research Paper Summaries and Future Work Notes
 
-PAPER 1 SUMMARY
-
-Title: Zero trust-based authentication for Inter-Satellite Links in NextGen
-       Low Earth Orbit networks
+PAPER 1: Zero Trust-based Authentication for Inter-Satellite Links in NextGen Low Earth Orbit Networks
 Authors: Farrea et al. (2025)
+	•	Main Contribution: The paper introduces a Zero Trust authentication protocol for Low Earth Orbit (LEO) satellites, focusing on Inter-Satellite Links (ISLs) and using orbital parameters (position, velocity, time) to validate satellite identities. The protocol incorporates Hyperelliptic Curve Cryptography (HECC) to offer lightweight security.
+	•	Key Features:
+	•	Phase 1: Initial Configuration for generating system parameters and temporary satellite IDs.
+	•	Phase 2: Pre-Negotiation for secure communication between satellites, ensuring the correct exchange of orbital parameters.
+	•	Phase 3: Mutual Authentication between satellites, generating Physical State Keys and MACs for secure data exchange.
+	•	Phase 4: Continuous Authentication via periodically updated temporary identities to maintain session security.
+	•	Security Assurance: HECC ensures that minimal computational resources are used while providing strong encryption.
+	•	Validation: Security was verified using Scyther, BAN Logic, and simulations with MATLAB and STK, showing a 64-98% reduction in communication overhead compared to traditional methods.
+	•	Main Benefit: The protocol improves security by removing dependency on ground stations, reducing latency and making it more efficient for large satellite constellations.
 
-What it does:
-- Proposes a Zero Trust authentication protocol for LEO satellite networks
-- Uses satellite orbital parameters (position, velocity, time) to verify
-  satellite identity
-- Uses Hyperelliptic Curve Cryptography (HECC) for lightweight security
-
-How it works:
-- Four phases: Setup, Pre-negotiation, Mutual Authentication, Continuous Auth
-- Satellites generate Physical State Keys from their orbital coordinates
-- Dynamic temporary IDs protect satellite identity
-- Continuous authentication keeps verifying throughout the session
-
-
-Phase 1 - Initial Configuration:
-   Step 1: Cloud server (NCC) generates system parameters and keys
-   Step 2: NCC creates temporary identities for each satellite
-   Step 3: NCC sends encrypted parameters to satellites via TLS
-   Step 4: Each satellite verifies NCC and generates its own temporary ID
-   Step 5: Satellites send confirmation back to NCC
-   Step 6: NCC verifies and confirms mutual authentication
-
-Phase 2 - Pre-Negotiation:
-   Step 1: Satellite B senses Satellite A in range
-   Step 2: Satellite B sends handover request with its temporary ID
-   Step 3: Satellite A verifies and forwards request to NCC
-   Step 4: NCC retrieves orbital parameters for both satellites
-   Step 5: NCC sends encrypted orbital data to both satellites
-   Step 6: Satellites store the parameters for authentication
-
-Phase 3 - Mutual Authentication:
-   Step 1: Satellite A calculates its position from orbital parameters
-   Step 2: Satellite A generates Physical State Key from position
-   Step 3: Satellite A derives Confidentiality Key and Integrity Key
-   Step 4: Satellite A creates Message Authentication Code (MAC)
-   Step 5: Satellite A sends Authentication Vector to Satellite B
-   Step 6: Satellite B verifies by recalculating expected values
-   Step 7: Satellite B repeats same steps and sends its vector to A
-   Step 8: Both satellites are now mutually authenticated
-
-Phase 4 - Continuous Authentication:
-   Step 1: Satellites monitor changes in environment and position
-   Step 2: At regular intervals, generate new temporary identities
-   Step 3: Create Continuous Authentication Token with timestamp
-   Step 4: Exchange encrypted tokens between satellites
-   Step 5: Verify received tokens and update identity records
-   Step 6: Send acknowledgment to confirm session continues
-   Step 7: NCC periodically triggers key updates for fresh keys
-
-Validation:
-- Tested with Scyther and BAN Logic for security
-- Simulated with MATLAB and STK for performance
-- Works for constellations up to 1200 satellites
-
-Main benefit:
-- Reduces communication overhead by 64-98% compared to existing methods
-- Does not rely heavily on ground stations
-
-
-PAPER 2 SUMMARY
-
-Title: Identity authentication for edge devices based on zero-trust architecture
+PAPER 2: Identity Authentication for Edge Devices Based on Zero-Trust Architecture
 Authors: Liu et al. (2022)
+	•	Main Contribution: This paper proposes a Zero Trust architecture for identity authentication of edge devices, incorporating local authentication and roaming authentication with group signatures for anonymous authentication.
+	•	Key Features:
+	•	Revocable Group Signatures: Efficient revocation handling without the need for a long revocation list.
+	•	Local Authentication: Edge devices generate secret keys, receive group signatures, and get expiration times for keys.
+	•	Roaming Authentication: Devices can authenticate when moving between networks using secure roaming protocols.
+	•	Validation: The theoretical security and performance were tested, showing better revocation checking efficiency compared to other protocols.
+	•	Main Benefit: This system provides secure authentication with low computational overhead, suitable for resource-constrained environments like IoT devices.
 
-What it does:
-- Proposes authentication protocols for edge computing devices
-- Supports both local authentication and roaming authentication
-- Uses group signatures so devices can authenticate anonymously
+PAPER 3: Zero-Trust Marine Cyberdefense for IoT-Based Communications: An Explainable Approach
+Authors: Nkoro et al. (2024)
+	•	Main Contribution: This paper introduces a Zero Trust-based Network Intrusion Detection System (NIDS) designed for marine IoT-based networks, integrating Explainable AI (XAI) to make the intrusion detection process more interpretable and trustworthy.
+	•	Key Features:
+	•	XAI Integration: Utilizes SHAP and LIME algorithms to provide transparency in decision-making, enabling trustworthiness in the NIDS model.
+	•	Zero Trust Principles: Continuous monitoring and verification of IoT devices in the marine network.
+	•	Deep Learning: Implements deep learning models to predict and detect cyberattacks with high accuracy.
+	•	Validation: Achieved an F1-score of 99% and high accuracy, while effectively reducing false alarms.
+	•	Main Benefit: Enhances cybersecurity by improving the interpretability and trust of IoT-based marine networks using explainable AI for intrusion detection.
 
-How it works:
-- Devices get keys with expiration times built in
-- When a key expires, it automatically becomes invalid
-- Uses binary tree structure to manage revocation efficiently
-- Roaming protocol allows devices to authenticate with foreign servers
+PAPER 4: Zero-Trust and Edge Intelligence Empowered Continuous Authentication for Satellite Networks
+Authors: Fu et al. (2022)
+	•	Main Contribution: Proposes an enhanced Zero Trust Architecture (ZTA) for satellite networks, incorporating edge intelligence and continuous authentication to enhance security in LEO satellite systems.
+	•	Key Features:
+	•	Multi-Dimensional ZTA: Expands Zero Trust principles to include subject, object, environment, behavior, and physical entity dimensions for better security coverage.
+	•	Continuous Authentication: Devices undergo periodic re-authentication during a session using Neural-Backed Decision Trees (NBDTs), improving accuracy.
+	•	Edge Intelligence: Supports decision-making for real-time authentication and minimizes overhead in satellite networks.
+	•	Validation: Simulated using STK and MATLAB, showing a 27% improvement in authentication accuracy over traditional methods.
+	•	Main Benefit: Provides secure and low-latency authentication for dynamic satellite networks, critical for next-generation (6G) satellite systems.
 
-Local Authentication (Step by Step):
-System Setup:
-   Step 1: Cloud server selects cryptographic groups and generators
-   Step 2: Cloud server generates master public key and private key
-   Step 3: Public parameters are shared with all edge servers and devices
-   Step 4: Registry is initialized to store device information
+Future Work Expansion
+	1.	Optimization of Authentication Speed
+	•	Authentication times in Paper 2 (about 6 seconds) may be too slow for real-time applications.
+	•	Optimizing authentication algorithms can reduce authentication times while maintaining high security and ensuring low-latency in environments like autonomous systems.
+	2.	Inter-Drone Authentication
+	•	Use the same Zero Trust principles for drone networks. Integrate directional antennas or IR beams for secure inter-drone communication.
+	•	Continuous authentication could ensure drone communication integrity, especially in high-interference environments (e.g., frequency hopping or laser/IR connections).
+	3.	Real-World Testing on Satellite Hardware
+	•	Simulations (MATLAB, STK) in Paper 1 and Paper 4 need to be validated on real satellite hardware. This will ensure that the proposed authentication protocols are practical and scalable under real operational conditions.
+	4.	Quantum Security
+	•	Quantum computing threats need to be addressed, especially since HECC in Paper 1 is not fully quantum-resistant.
+	•	Research into quantum-resistant algorithms (e.g., lattice-based encryption, quantum key distribution (QKD)) should be prioritized to future-proof these authentication protocols.
 
-Device Joining:
-   Step 1: Edge device generates a secret key
-   Step 2: Device proves knowledge of secret to edge server
-   Step 3: Edge server assigns expiration time to device
-   Step 4: Edge server creates BBS+ signatures for the device
-   Step 5: Device receives signature key with expiration embedded
-   Step 6: Edge server stores revocation token in registry
-
-Signing (Authentication):
-   Step 1: Device checks if current time is before expiration
-   Step 2: Device encrypts its signature components
-   Step 3: Device creates zero-knowledge proof of valid membership
-   Step 4: Device generates signature on the message
-   Step 5: Signature is sent to verifier (edge server)
-
-Verification:
-   Step 1: Verifier checks if signature format is valid
-   Step 2: Verifier runs verification equations
-   Step 3: If device might be revoked early, check revocation list
-   Step 4: Output valid only if all checks pass
-
-Revocation:
-   Step 1: For expired devices - automatically invalid (no list needed)
-   Step 2: For early revocation - add token to revocation list
-   Step 3: Use complete subtree algorithm to manage expired nodes
-
-How it works - Roaming Authentication (Step by Step):
-
-Pre-Negotiation:
-   Step 1: Device selects random number for key agreement
-   Step 2: Device signs the pre-negotiation message
-   Step 3: Device sends message to foreign server
-   Step 4: Foreign server verifies timestamp and signature
-   Step 5: Foreign server caches the message for later use
-
-Authentication:
-   Step 1: Device sends home server ID and temporary pseudonym to foreign server
-   Step 2: Foreign server generates its own random number
-   Step 3: Foreign server signs and sends response to device
-   Step 4: Device verifies foreign server signature
-   Step 5: Device generates group signature for authentication
-   Step 6: Device encrypts signature with session key and sends it
-   Step 7: Foreign server decrypts and verifies group signature
-   Step 8: If valid, session key is established and connection accepted
-
-
-Validation:
-- Security proven mathematically (backward unlinkability, traceability)
-- Compared with three other protocols
-- Shows better revocation checking performance over time
-
-Main benefit:
-- Expired devices dont need to be added to revocation list
-- Reduces overhead when checking if devices are revoked
-
-
-FUTURE WORK IDEAS
-
-1. Satellite-Edge Integration
-   - Paper 1 handles satellites, Paper 2 handles edge devices
-   - Could combine them for scenarios where edge devices connect via satellites
-   - Handle handover when device moves from ground network to satellite coverage
-
-2. Better Revocation for Satellites
-   - Paper 1 doesnt fully address what happens when a satellite is compromised
-   - Could adapt the revocation approach from Paper 2 for satellite networks
-
-3. Reduce Device-Side Authentication Time
-   - Paper 2 takes about 6 seconds for device authentication
-   - This is too slow for many real-time applications
-   - Need optimization for faster authentication
-
-4 Use same concept as paper 1 for the inter-drone connection
-   - We can use IR beacon and Drectional antennas working on frequency hopping
-   - Or use Lasers/IR for connection between them hard but thinkable when case of jamming.
-
-5. Test with Real Hardware
-   - Both papers use simulations
-   - Need testing on actual satellite hardware and edge devices
-   - Verify that theoretical performance matches real-world results
-
-6. Handle Network Interruptions
-   - What happens when satellite link drops during authentication?
-   - Need graceful recovery mechanisms
-
-7. Quantum Security
-   - Both papers mention quantum computing as a threat
-   - Paper 1 uses HECC which helps but isnt fully quantum-resistant
-   - Need to explore lattice-based alternatives
