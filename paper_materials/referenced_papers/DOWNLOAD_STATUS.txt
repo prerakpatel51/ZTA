@@ -1,0 +1,41 @@
+DOWNLOADED SUCCESSFULLY (14 PDFs):
+====================================
+1.  NIST_SP_800-207.pdf                           - Rose et al. (2020) NIST SP 800-207
+2.  Lundberg_2017_SHAP_NeurIPS.pdf                - Lundberg & Lee (2017) SHAP
+3.  Mothilal_2020_DiCE_FAccT.pdf                  - Mothilal et al. (2020) DiCE
+4.  Liu_2024_Dissecting_ZT_IoT.pdf                - Liu et al. (2024) Dissecting ZT in IoT
+5.  Laghari_2025_AI_ZT_IDS_IIoT.pdf               - Laghari et al. (2025) AI-enabled ZT IDS for IIoT
+6.  Haque_2024_UAV_ZTA_XAI.pdf                    - Haque et al. (2024) UAV ZTA + XAI
+7.  Alvarez-Melis_2018_Robustness_Interpretability.pdf - Alvarez-Melis & Jaakkola (2018)
+8.  Schemmer_2023_Counterfactual_Anomaly.pdf       - Schemmer et al. (2023) CF for anomaly
+9.  Galinkin_2022_Robustness_XAI.pdf               - Galinkin (2022) Rapid7 robustness
+10. Rastogi_2025_XAI_Threat_Intelligence.pdf       - Rastogi et al. (2025) SOC analyst XAI
+11. Mohale_2025_XAI_IDS_Systematic_Review.pdf      - Mohale & Obagbuwa (2025) XAI in IDS
+12. Ali_2024_ML_IDS_Survey.pdf                     - Ali et al. (2024) ML IDS survey
+13. Slack_2020_Fooling_LIME_SHAP.pdf               - Slack et al. (2020) adversarial XAI
+14. Jiang_2024_Robust_CE_IJCAI.pdf                 - Jiang et al. (2024) robust CEs, IJCAI
+
+PAYWALLED - NEED MANUAL DOWNLOAD (via university library):
+============================================================
+15. Kindervag (2010) - Forrester Research report (proprietary)
+16. NIST SP 1800-35 (2025) - https://csrc.nist.gov/pubs/sp/1800/35/final
+17. Syed et al. (2022) IEEE Access - https://ieeexplore.ieee.org/document/9773102
+18. Xiao et al. (2022) SoK - https://onlinelibrary.wiley.com/doi/10.1155/2022/7026779
+19. He et al. (2022) ZTA Challenges - https://onlinelibrary.wiley.com/doi/10.1155/2022/6476274
+20. DoD ZTA Ref Architecture (2022) - search "DoD Zero Trust Reference Architecture v2.0"
+21. Zanasi et al. (2024) - https://www.sciencedirect.com/science/article/pii/S1570870524000258
+22. Feng & Hu (2023) - https://ieeexplore.ieee.org/document/10330693
+23. Ehrlich et al. (2021) - https://link.springer.com/article/10.1007/s11277-021-09055-1
+24. Azad et al. (2024) - https://www.sciencedirect.com/science/article/pii/S2542660524001689
+25. Pliatsios et al. (2023) - https://www.mdpi.com/2079-9292/12/3/566
+26. Wang et al. (2025) - https://crad.ict.ac.cn/en/article/cstr/32373.14.issn1000-1239.202440840
+27. Ramezanpour & Jagannath (2022) - https://www.sciencedirect.com/science/article/abs/pii/S1389128622003929
+28. Jeong & Yang (2025) - https://www.mdpi.com/2076-3417/15/17/9551
+29. Mahansaria & Roy (2024) - https://link.springer.com/article/10.1007/s00607-024-01333-7
+30. Capuano et al. (2022) - https://ieeexplore.ieee.org/document/9877919
+31. Yan et al. (2022) - https://onlinelibrary.wiley.com/doi/full/10.1002/int.23088
+32. Alenezi & Ludwig (2021) - https://ieeexplore.ieee.org/document/9659888
+33. Verma et al. (2024) - https://dl.acm.org/doi/10.1145/3677119
+34. Chandola et al. (2009) - https://dl.acm.org/doi/10.1145/1541880.1541882
+35. Marquez (2025) - https://sciencebring.com/index.php/ijasr/article/view/994
+36. Nkoro et al. (2024) - https://www.mdpi.com/2079-9292/13/2/276
